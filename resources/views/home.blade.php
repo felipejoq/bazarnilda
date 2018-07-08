@@ -9,36 +9,41 @@
                         @include('layouts.opciones')
                         <div class="col s12 m12 l9 xl9">
 
-
-                            <div class="row">
-                                <div class="col s12 m12">
-                                    <div class="card-panel">
-                                        <a class="waves-effect" href="{{route('productos.index')}}">
-                                            <i class="material-icons tiny">add_box</i> Administrar Productos
-                                        </a>
+                            @if(Auth::user()->rol == 'administrador' || Auth::user()->rol == 'bodeguero')
+                                <div class="row">
+                                    <div class="col s12 m12">
+                                        <div class="card-panel">
+                                            <a class="waves-effect" href="{{route('productos.index')}}">
+                                                <i class="material-icons tiny">add_box</i> Administrar Productos
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
 
-                            <div class="row">
-                                <div class="col s12 m12">
-                                    <div class="card-panel">
-                                        <a class="waves-effect" href="{{route('retirarproductos.index')}}">
-                                            <i class="material-icons tiny">monetization_on</i> Retirar Productos
-                                        </a>
+                            @if(Auth::user()->rol == 'administrador' || Auth::user()->rol == 'vendedor')
+                                <div class="row">
+                                    <div class="col s12 m12">
+                                        <div class="card-panel">
+                                            <a class="waves-effect" href="{{route('retirarproductos.index')}}">
+                                                <i class="material-icons tiny">monetization_on</i> Retirar Productos
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
 
-                            <div class="row">
-                                <div class="col s12 m12">
-                                    <div class="card-panel">
-                                        <a class="waves-effect" href="{{route('usuarios.index')}}">
-                                            <i class="material-icons tiny">person</i> Administrar Usuarios
-                                        </a>
+                            @if(Auth::user()->rol == 'administrador')
+                                <div class="row">
+                                    <div class="col s12 m12">
+                                        <div class="card-panel">
+                                            <a class="waves-effect" href="{{route('usuarios.index')}}">
+                                                <i class="material-icons tiny">person</i> Administrar Usuarios
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
 
 
 

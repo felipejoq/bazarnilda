@@ -24,6 +24,22 @@ class DatabaseSeeder extends Seeder
         ]);
         $usuario1->save();
 
+        $usuario2 = new User([
+            'name' => 'Bodeguero',
+            'email' => 'bodega@admin.com',
+            'rol' => 'bodeguero',
+            'password' => bcrypt('123123')
+        ]);
+        $usuario2->save();
+
+        $usuario3 = new User([
+            'name' => 'Vendedor',
+            'email' => 'vendedor@admin.com',
+            'rol' => 'vendedor',
+            'password' => bcrypt('123123')
+        ]);
+        $usuario3->save();
+
         $categoria1 = new Categoria([
             'nombre' => 'Pantalones mujer',
             'descripcion' => 'Los mejores pantalones de mujer'

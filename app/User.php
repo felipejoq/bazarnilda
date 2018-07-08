@@ -31,4 +31,8 @@ class User extends Authenticatable
         return $this->belongsToMany(Producto::class,'productos_users')
             ->withPivot('user_id','producto_id','accion','cantidad');
     }
+
+    public function getRol(){
+        return $this->rol;
+    }
 }
